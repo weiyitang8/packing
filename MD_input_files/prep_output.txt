@@ -1,0 +1,814 @@
+python prep_TMab_models4_MDv2.py ./test/design_setup5_059-0002.pdb ./test  ./ ./85_POPC ./design_059-0002/ X
+@> 2819 atoms and 1 coordinate set(s) were parsed in 0.02s.
+Selection 'name OP1' 5 ['O', 'O', 'O', 'O', 'O']
+Selection 'name OP1' 1 ['O']
+Selection 'name CO' 5 ['C', 'C', 'C', 'C', 'C']
+Selection 'name CO' 1 ['C']
+Selection 'name CP2' 5 ['CH3', 'CH3', 'CH3', 'CH3', 'CH3']
+Selection 'name CP2' 1 ['CH3']
+Selection 'name CN' 1 ['CH3']
+Selection 'name NM' 1 ['N']
+                      :-) GROMACS - gmx pdb2gmx, 2020 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx pdb2gmx, version 2020
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/sting-gpu/weiyi/design/MD_input_files/test/design_059-0002
+Command line:
+  gmx pdb2gmx -f input.pdb -o protOnly.gro -water tip3p -ignh -ff charmm36-jul2017 -ter
+
+
+Using the Charmm36-jul2017 force field in directory ./charmm36-jul2017.ff
+
+going to rename ./charmm36-jul2017.ff/merged.r2b
+Opening force field file ./charmm36-jul2017.ff/merged.r2b
+Reading input.pdb...
+Read '', 1309 atoms
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+There are 6 chains and 0 blocks of water and 168 residues with 1309 atoms
+
+  chain  #res #atoms
+  1 'X'    28    219  
+  2 'B'    28    218  
+  3 'D'    28    218  
+  4 'E'    28    218  
+  5 'C'    28    218  
+  6 'A'    28    218  
+
+All occupancies are one
+Opening force field file ./charmm36-jul2017.ff/atomtypes.atp
+Reading residue database... (Charmm36-jul2017)
+Opening force field file ./charmm36-jul2017.ff/merged.rtp
+Opening force field file ./charmm36-jul2017.ff/merged.hdb
+Opening force field file ./charmm36-jul2017.ff/merged.n.tdb
+Opening force field file ./charmm36-jul2017.ff/merged.c.tdb
+Processing chain 1 'X' (219 atoms, 28 residues)
+Identified residue ACE105 as a starting terminus.
+Identified residue NME132 as a ending terminus.
+8 out of 8 lines of specbond.dat converted successfully
+Select start terminus type for ACE-105
+ 0: NH3+
+ 1: NH2
+ 2: 5TER
+ 3: None
+Start terminus ACE-105: None
+Select end terminus type for NME-132
+ 0: COO-
+ 1: COOH
+ 2: CT2
+ 3: 3TER
+ 4: None
+End terminus NME-132: None
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 28 residues with 471 atoms
+Chain time...
+Making bonds...
+Number of bonds was 478, now 477
+Generating angles, dihedrals and pairs...
+Before cleaning: 1269 pairs
+Before cleaning: 1279 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are   26 cmap torsion pairs
+There are 1279 dihedrals,   55 impropers,  876 angles
+          1254 pairs,      477 bonds and     0 virtual sites
+Total mass 3078.010 a.m.u.
+Total charge 1.000 e
+Writing topology
+Processing chain 2 'B' (218 atoms, 28 residues)
+Identified residue ACE0 as a starting terminus.
+Identified residue GLY27 as a ending terminus.
+8 out of 8 lines of specbond.dat converted successfully
+Select start terminus type for ACE-0
+ 0: NH3+
+ 1: NH2
+ 2: 5TER
+ 3: None
+Start terminus ACE-0: None
+Select end terminus type for GLY-27
+ 0: COO-
+ 1: COOH
+ 2: CT2
+ 3: 3TER
+ 4: None
+End terminus GLY-27: COO-
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 28 residues with 469 atoms
+Chain time...
+Making bonds...
+Number of bonds was 474, now 474
+Generating angles, dihedrals and pairs...
+Before cleaning: 1257 pairs
+Before cleaning: 1267 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are   26 cmap torsion pairs
+There are 1267 dihedrals,   58 impropers,  871 angles
+          1245 pairs,      474 bonds and     0 virtual sites
+Total mass 3052.923 a.m.u.
+Total charge 0.000 e
+Writing topology
+Processing chain 3 'D' (218 atoms, 28 residues)
+Identified residue ACE0 as a starting terminus.
+Identified residue GLY27 as a ending terminus.
+8 out of 8 lines of specbond.dat converted successfully
+Select start terminus type for ACE-0
+ 0: NH3+
+ 1: NH2
+ 2: 5TER
+ 3: None
+Start terminus ACE-0: None
+Select end terminus type for GLY-27
+ 0: COO-
+ 1: COOH
+ 2: CT2
+ 3: 3TER
+ 4: None
+End terminus GLY-27: COO-
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 28 residues with 469 atoms
+Chain time...
+Making bonds...
+Number of bonds was 474, now 474
+Generating angles, dihedrals and pairs...
+Before cleaning: 1257 pairs
+Before cleaning: 1267 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are   26 cmap torsion pairs
+There are 1267 dihedrals,   58 impropers,  871 angles
+          1245 pairs,      474 bonds and     0 virtual sites
+Total mass 3052.923 a.m.u.
+Total charge 0.000 e
+Writing topology
+Processing chain 4 'E' (218 atoms, 28 residues)
+Identified residue ACE0 as a starting terminus.
+Identified residue GLY27 as a ending terminus.
+8 out of 8 lines of specbond.dat converted successfully
+Select start terminus type for ACE-0
+ 0: NH3+
+ 1: NH2
+ 2: 5TER
+ 3: None
+Start terminus ACE-0: None
+Select end terminus type for GLY-27
+ 0: COO-
+ 1: COOH
+ 2: CT2
+ 3: 3TER
+ 4: None
+End terminus GLY-27: COO-
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 28 residues with 469 atoms
+Chain time...
+Making bonds...
+Number of bonds was 474, now 474
+Generating angles, dihedrals and pairs...
+Before cleaning: 1257 pairs
+Before cleaning: 1267 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are   26 cmap torsion pairs
+There are 1267 dihedrals,   58 impropers,  871 angles
+          1245 pairs,      474 bonds and     0 virtual sites
+Total mass 3052.923 a.m.u.
+Total charge 0.000 e
+Writing topology
+Processing chain 5 'C' (218 atoms, 28 residues)
+Identified residue ACE0 as a starting terminus.
+Identified residue GLY27 as a ending terminus.
+8 out of 8 lines of specbond.dat converted successfully
+Select start terminus type for ACE-0
+ 0: NH3+
+ 1: NH2
+ 2: 5TER
+ 3: None
+Start terminus ACE-0: None
+Select end terminus type for GLY-27
+ 0: COO-
+ 1: COOH
+ 2: CT2
+ 3: 3TER
+ 4: None
+End terminus GLY-27: COO-
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 28 residues with 469 atoms
+Chain time...
+Making bonds...
+Number of bonds was 474, now 474
+Generating angles, dihedrals and pairs...
+Before cleaning: 1257 pairs
+Before cleaning: 1267 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are   26 cmap torsion pairs
+There are 1267 dihedrals,   58 impropers,  871 angles
+          1245 pairs,      474 bonds and     0 virtual sites
+Total mass 3052.923 a.m.u.
+Total charge 0.000 e
+Writing topology
+Processing chain 6 'A' (218 atoms, 28 residues)
+Identified residue ACE0 as a starting terminus.
+Identified residue GLY27 as a ending terminus.
+8 out of 8 lines of specbond.dat converted successfully
+Select start terminus type for ACE-0
+ 0: NH3+
+ 1: NH2
+ 2: 5TER
+ 3: None
+Start terminus ACE-0: None
+Select end terminus type for GLY-27
+ 0: COO-
+ 1: COOH
+ 2: CT2
+ 3: 3TER
+ 4: None
+End terminus GLY-27: COO-
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 28 residues with 469 atoms
+Chain time...
+Making bonds...
+Number of bonds was 474, now 474
+Generating angles, dihedrals and pairs...
+Before cleaning: 1257 pairs
+Before cleaning: 1267 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are   26 cmap torsion pairs
+There are 1267 dihedrals,   58 impropers,  871 angles
+          1245 pairs,      474 bonds and     0 virtual sites
+Total mass 3052.923 a.m.u.
+Total charge 0.000 e
+Writing topology
+Including chain 1 in system: 471 atoms 28 residues
+Including chain 2 in system: 469 atoms 28 residues
+Including chain 3 in system: 469 atoms 28 residues
+Including chain 4 in system: 469 atoms 28 residues
+Including chain 5 in system: 469 atoms 28 residues
+Including chain 6 in system: 469 atoms 28 residues
+Now there are 2816 atoms and 168 residues
+Total mass in system 18342.624 a.m.u.
+Total charge in system 1.000 e
+
+Writing coordinate file...
+		--------- PLEASE NOTE ------------
+You have successfully generated a topology from: input.pdb.
+The Charmm36-jul2017 force field and the tip3p water model are used.
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "We ignore public understanding of science at our peril." (Eugenie Clark)
+
+@> 26130 atoms and 1 coordinate set(s) were parsed in 0.17s.
+@> 1309 atoms and 1 coordinate set(s) were parsed in 0.01s.
+                      :-) GROMACS - gmx pdb2gmx, 2020 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx pdb2gmx, version 2020
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/sting-gpu/weiyi/design/MD_input_files/test/design_059-0002
+Command line:
+  gmx pdb2gmx -f goodMem.pdb -o memcenDry.gro -water tip3p -ff charmm36-jul2017 -p lipids.top -i lipids.itp
+
+
+Using the Charmm36-jul2017 force field in directory ./charmm36-jul2017.ff
+
+going to rename ./charmm36-jul2017.ff/merged.r2b
+Opening force field file ./charmm36-jul2017.ff/merged.r2b
+Reading goodMem.pdb...
+Read '', 21440 atoms
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+There are 1 chains and 0 blocks of water and 160 residues with 21440 atoms
+
+  chain  #res #atoms
+  1 ' '   160  21440  
+
+All occupancies are one
+Opening force field file ./charmm36-jul2017.ff/atomtypes.atp
+Reading residue database... (Charmm36-jul2017)
+Opening force field file ./charmm36-jul2017.ff/merged.rtp
+Opening force field file ./charmm36-jul2017.ff/merged.hdb
+Opening force field file ./charmm36-jul2017.ff/merged.n.tdb
+Opening force field file ./charmm36-jul2017.ff/merged.c.tdb
+Processing chain 1 (21440 atoms, 160 residues)
+Problem with chain definition, or missing terminal residues.
+This chain does not appear to contain a recognized chain molecule.
+If this is incorrect, you can edit residuetypes.dat to modify the behavior.
+8 out of 8 lines of specbond.dat converted successfully
+Opening force field file ./charmm36-jul2017.ff/merged.arn
+Checking for duplicate atoms....
+Generating any missing hydrogen atoms and/or adding termini.
+Now there are 160 residues with 21440 atoms
+Making bonds...
+Number of bonds was 21280, now 21280
+Generating angles, dihedrals and pairs...
+Before cleaning: 56960 pairs
+Before cleaning: 56960 dihedrals
+Keeping all generated dihedrals
+Making cmap torsions...
+There are 56960 dihedrals,  320 impropers, 40960 angles
+          56960 pairs,     21280 bonds and     0 virtual sites
+Total mass 121615.070 a.m.u.
+Total charge 0.000 e
+Writing topology
+
+Writing coordinate file...
+		--------- PLEASE NOTE ------------
+You have successfully generated a topology from: goodMem.pdb.
+The Charmm36-jul2017 force field and the tip3p water model are used.
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "error: too many template-parameter-lists" (g++)
+
+                      :-) GROMACS - gmx editconf, 2020 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx editconf, version 2020
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/sting-gpu/weiyi/design/MD_input_files/test/design_059-0002
+Command line:
+  gmx editconf -f prot_Mem.gro -o prot_Mem_Box.gro -box 8.5 8.5 8.5
+
+Note that major changes are planned in future for editconf, to improve usability and utility.
+
+WARNING: Bad box in file prot_Mem.gro
+
+Generated a cubic box    8.811 x    8.823 x    5.418
+Read 24256 atoms
+Volume: 421.192 nm^3, corresponds to roughly 189500 electrons
+No velocities found
+    system size :  8.811  8.823  5.418 (nm)
+    center      :  0.003  0.060 -0.029 (nm)
+    box vectors :  8.811  8.823  5.418 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 421.19               (nm^3)
+    shift       :  4.247  4.190  4.279 (nm)
+new center      :  4.250  4.250  4.250 (nm)
+new box vectors :  8.500  8.500  8.500 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  : 614.12               (nm^3)
+
+GROMACS reminds you: "Uh-oh, We're In Trouble" (Shampoo)
+
+                      :-) GROMACS - gmx solvate, 2020 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx solvate, version 2020
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/sting-gpu/weiyi/design/MD_input_files/test/design_059-0002
+Command line:
+  gmx solvate -cp prot_Mem_Box.gro -cs spc216.gro -o Sys_solv.gro -p topol.top
+
+Reading solute configuration
+Reading solvent configuration
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 5x5x5 boxes
+Solvent box contains 68178 atoms in 22726 residues
+Removed 7746 solvent atoms due to solvent-solvent overlap
+Removed 22029 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 12801 residues
+Generated solvent containing 38403 atoms in 12801 residues
+Writing generated configuration to Sys_solv.gro
+
+Output configuration contains 62659 atoms in 13129 residues
+Volume                 :     614.125 (nm^3)
+Density                :     1006.46 (g/l)
+Number of solvent molecules:  12801   
+
+Processing topology
+Adding line for 12801 solvent molecules with resname (SOL) to topology file (topol.top)
+
+Back Off! I just backed up topol.top to ./#topol.top.1#
+
+GROMACS reminds you: "Home computers are being called upon to perform many new functions, including the consumption of homework formerly eaten by the dog." (Doug Larson)
+
+
+
+
+ Removing waters in lipid area 
+
+
+prep_TMab_models4_MDv2.py:271: DeprecationWarning: 'U' mode is deprecated
+  protTop = open('topol.top', 'rU')
+                       :-) GROMACS - gmx grompp, 2020 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2020
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/sting-gpu/weiyi/design/MD_input_files/test/design_059-0002
+Command line:
+  gmx grompp -f ions_c36.mdp -c clean_Sys_solv-cen.gro -p topol.top -o ions.tpr -maxwarn 1
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file ions_c36.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -288845956
+Generated 97877 of the 97903 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+Generated 64492 of the 97903 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'Protein_chain_X'
+turning H bonds into constraints...
+Excluding 3 bonded neighbours molecule type 'Protein_chain_B'
+turning H bonds into constraints...
+Excluding 3 bonded neighbours molecule type 'Protein_chain_D'
+turning H bonds into constraints...
+Excluding 3 bonded neighbours molecule type 'Protein_chain_E'
+turning H bonds into constraints...
+Excluding 3 bonded neighbours molecule type 'Protein_chain_C'
+turning H bonds into constraints...
+Excluding 3 bonded neighbours molecule type 'Protein_chain_A'
+turning H bonds into constraints...
+Excluding 3 bonded neighbours molecule type 'POPC'
+turning H bonds into constraints...
+Excluding 2 bonded neighbours molecule type 'SOL'
+turning H bonds into constraints...
+
+NOTE 2 [file topol.top, line 61]:
+  System has non-zero total charge: 1.000000
+  Total charge should normally be an integer. SeeNM
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+  
+
+
+
+WARNING 1 [file topol.top, line 61]:
+  You are using Ewald electrostatics in a system with net charge. This can
+  lead to severe artifacts, such as ions moving into regions with low
+  dielectric, due to the uniform background charge. We suggest to
+  neutralize your system with counter ions, possibly in combination with a
+  physiological salt concentration.
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+J. S. Hub, B. L. de Groot, H. Grubmueller, G. Groenhof
+Quantifying Artifacts in Ewald Simulations of Inhomogeneous Systems with a Net
+Charge
+J. Chem. Theory Comput. 10 (2014) pp. 381-393
+-------- -------- --- Thank You --- -------- --------
+
+Analysing residue names:
+There are:   168    Protein residues
+There are:   160      Other residues
+There are: 10851      Water residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Number of degrees of freedom in T-Coupling group rest is 123244.00
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 72x72x72, spacing 0.118 0.118 0.118
+Estimate for the relative computational load of the PME mesh part: 0.17
+This run will generate roughly 5 Mb of data
+
+There were 2 notes
+
+There was 1 warning
+
+GROMACS reminds you: "Making merry out of nothing, like in refugee camp" (Gogol Bordello)
+
+                       :-) GROMACS - gmx genion, 2020 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx genion, version 2020
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/sting-gpu/weiyi/design/MD_input_files/test/design_059-0002
+Command line:
+  gmx genion -s ions.tpr -o system_solv_ions.gro -p topol.top -pname K -nname CL -neutral -conc .15
+
+Reading file ions.tpr, VERSION 2020 (single precision)
+Reading file ions.tpr, VERSION 2020 (single precision)
+Will try to add 55 K ions and 56 CL ions.
+Select a continuous group of solvent molecules
+Group     0 (         System) has 56809 elements
+Group     1 (        Protein) has  2816 elements
+Group     2 (      Protein-H) has  1309 elements
+Group     3 (        C-alpha) has   161 elements
+Group     4 (       Backbone) has   490 elements
+Group     5 (      MainChain) has   652 elements
+Group     6 (   MainChain+Cb) has   802 elements
+Group     7 (    MainChain+H) has   808 elements
+Group     8 (      SideChain) has  2008 elements
+Group     9 (    SideChain-H) has   657 elements
+Group    10 (    Prot-Masses) has  2816 elements
+Group    11 (    non-Protein) has 53993 elements
+Group    12 (          Other) has 21440 elements
+Group    13 (           POPC) has 21440 elements
+Group    14 (          Water) has 32553 elements
+Group    15 (            SOL) has 32553 elements
+Group    16 (      non-Water) has 24256 elements
+Select a group: Selected 15: 'SOL'
+Number of (3-atomic) solvent molecules: 10851
+
+Processing topology
+Replacing 111 solute molecules in topology file (topol.top)  by 55 K and 56 CL ions.
+
+Back Off! I just backed up topol.top to ./#topol.top.2#
+Using random seed 1551958211.
+Replacing solvent molecule 6864 (atom 44848) with K
+Replacing solvent molecule 7671 (atom 47269) with K
+Replacing solvent molecule 6915 (atom 45001) with K
+Replacing solvent molecule 8082 (atom 48502) with K
+Replacing solvent molecule 3365 (atom 34351) with K
+Replacing solvent molecule 6524 (atom 43828) with K
+Replacing solvent molecule 10632 (atom 56152) with K
+Replacing solvent molecule 1749 (atom 29503) with K
+Replacing solvent molecule 4932 (atom 39052) with K
+Replacing solvent molecule 2066 (atom 30454) with K
+Replacing solvent molecule 7467 (atom 46657) with K
+Replacing solvent molecule 2790 (atom 32626) with K
+Replacing solvent molecule 9359 (atom 52333) with K
+Replacing solvent molecule 5169 (atom 39763) with K
+Replacing solvent molecule 7102 (atom 45562) with K
+Replacing solvent molecule 6896 (atom 44944) with K
+Replacing solvent molecule 9440 (atom 52576) with K
+Replacing solvent molecule 3873 (atom 35875) with K
+Replacing solvent molecule 7272 (atom 46072) with K
+Replacing solvent molecule 3346 (atom 34294) with K
+Replacing solvent molecule 7529 (atom 46843) with K
+Replacing solvent molecule 8180 (atom 48796) with K
+Replacing solvent molecule 2546 (atom 31894) with K
+Replacing solvent molecule 4342 (atom 37282) with K
+Replacing solvent molecule 44 (atom 24388) with K
+Replacing solvent molecule 3601 (atom 35059) with K
+Replacing solvent molecule 4801 (atom 38659) with K
+Replacing solvent molecule 10668 (atom 56260) with K
+Replacing solvent molecule 5823 (atom 41725) with K
+Replacing solvent molecule 9102 (atom 51562) with K
+Replacing solvent molecule 3342 (atom 34282) with K
+Replacing solvent molecule 8831 (atom 50749) with K
+Replacing solvent molecule 6809 (atom 44683) with K
+Replacing solvent molecule 2538 (atom 31870) with K
+Replacing solvent molecule 2270 (atom 31066) with K
+Replacing solvent molecule 8008 (atom 48280) with K
+Replacing solvent molecule 4696 (atom 38344) with K
+Replacing solvent molecule 3987 (atom 36217) with K
+Replacing solvent molecule 4401 (atom 37459) with K
+Replacing solvent molecule 5153 (atom 39715) with K
+Replacing solvent molecule 2138 (atom 30670) with K
+Replacing solvent molecule 5787 (atom 41617) with K
+Replacing solvent molecule 5158 (atom 39730) with K
+Replacing solvent molecule 4040 (atom 36376) with K
+Replacing solvent molecule 4763 (atom 38545) with K
+Replacing solvent molecule 8540 (atom 49876) with K
+Replacing solvent molecule 1040 (atom 27376) with K
+Replacing solvent molecule 4452 (atom 37612) with K
+Replacing solvent molecule 5552 (atom 40912) with K
+Replacing solvent molecule 9830 (atom 53746) with K
+Replacing solvent molecule 2803 (atom 32665) with K
+Replacing solvent molecule 8731 (atom 50449) with K
+Replacing solvent molecule 1007 (atom 27277) with K
+Replacing solvent molecule 1226 (atom 27934) with K
+Replacing solvent molecule 181 (atom 24799) with K
+Replacing solvent molecule 1966 (atom 30154) with CL
+Replacing solvent molecule 4831 (atom 38749) with CL
+Replacing solvent molecule 2330 (atom 31246) with CL
+Replacing solvent molecule 7590 (atom 47026) with CL
+Replacing solvent molecule 1063 (atom 27445) with CL
+Replacing solvent molecule 656 (atom 26224) with CL
+Replacing solvent molecule 8078 (atom 48490) with CL
+Replacing solvent molecule 4868 (atom 38860) with CL
+Replacing solvent molecule 2322 (atom 31222) with CL
+Replacing solvent molecule 4931 (atom 39049) with CL
+Replacing solvent molecule 3288 (atom 34120) with CL
+Replacing solvent molecule 480 (atom 25696) with CL
+Replacing solvent molecule 5294 (atom 40138) with CL
+Replacing solvent molecule 5783 (atom 41605) with CL
+Replacing solvent molecule 951 (atom 27109) with CL
+Replacing solvent molecule 6085 (atom 42511) with CL
+Replacing solvent molecule 5521 (atom 40819) with CL
+Replacing solvent molecule 924 (atom 27028) with CL
+Replacing solvent molecule 1096 (atom 27544) with CL
+Replacing solvent molecule 6495 (atom 43741) with CL
+Replacing solvent molecule 7798 (atom 47650) with CL
+Replacing solvent molecule 5786 (atom 41614) with CL
+Replacing solvent molecule 10449 (atom 55603) with CL
+Replacing solvent molecule 2472 (atom 31672) with CL
+Replacing solvent molecule 7778 (atom 47590) with CL
+Replacing solvent molecule 9417 (atom 52507) with CL
+Replacing solvent molecule 8636 (atom 50164) with CL
+Replacing solvent molecule 6210 (atom 42886) with CL
+Replacing solvent molecule 326 (atom 25234) with CL
+Replacing solvent molecule 9189 (atom 51823) with CL
+Replacing solvent molecule 3410 (atom 34486) with CL
+Replacing solvent molecule 1561 (atom 28939) with CL
+Replacing solvent molecule 10029 (atom 54343) with CL
+Replacing solvent molecule 4369 (atom 37363) with CL
+Replacing solvent molecule 1986 (atom 30214) with CL
+Replacing solvent molecule 2857 (atom 32827) with CL
+Replacing solvent molecule 5978 (atom 42190) with CL
+Replacing solvent molecule 8419 (atom 49513) with CL
+Replacing solvent molecule 6646 (atom 44194) with CL
+Replacing solvent molecule 2844 (atom 32788) with CL
+Replacing solvent molecule 4606 (atom 38074) with CL
+Replacing solvent molecule 1479 (atom 28693) with CL
+Replacing solvent molecule 1619 (atom 29113) with CL
+Replacing solvent molecule 4792 (atom 38632) with CL
+Replacing solvent molecule 3897 (atom 35947) with CL
+Replacing solvent molecule 136 (atom 24664) with CL
+Replacing solvent molecule 10420 (atom 55516) with CL
+Replacing solvent molecule 10072 (atom 54472) with CL
+Replacing solvent molecule 9394 (atom 52438) with CL
+Replacing solvent molecule 5392 (atom 40432) with CL
+Replacing solvent molecule 476 (atom 25684) with CL
+Replacing solvent molecule 3309 (atom 34183) with CL
+Replacing solvent molecule 9461 (atom 52639) with CL
+Replacing solvent molecule 6829 (atom 44743) with CL
+Replacing solvent molecule 2269 (atom 31063) with CL
+Replacing solvent molecule 7698 (atom 47350) with CL
+
+
+GROMACS reminds you: "Just Give Me a Blip" (F. Black)

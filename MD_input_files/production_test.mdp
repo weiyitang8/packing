@@ -1,0 +1,44 @@
+integrator              = md
+dt                      = 0.002
+nsteps                  = 40000000 ; 200 ns
+nstlog                  = 500000	; log & save every 1 ns
+nstxout                 = 500000
+nstvout                 = 500000
+nstfout                 = 500000
+nstcalcenergy           = 100
+nstenergy               = 500000
+ 
+ ; write compressed frames every 200 ps
+nstxtcout				= 100000
+
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+;
+tcoupl                  = Nose-Hoover
+tc_grps                 = Protein   POPC   Water_and_ions
+tau_t                   = 1.0    1.0    1.0
+ref_t                   = 298.15 298.15 298.15
+;
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = semiisotropic 
+tau_p                   = 5.0
+compressibility         = 4.5e-5  4.5e-5
+ref_p                   = 1.0     1.0
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = Protein   POPC   Water_and_ions
+;
+refcoord_scaling        = com

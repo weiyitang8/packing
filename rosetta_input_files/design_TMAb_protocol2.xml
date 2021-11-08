@@ -1,0 +1,89 @@
+<ROSETTASCRIPTS>
+ 
+  <TASKOPERATIONS>
+         <LimitAromaChi2 name="arochi"/>
+         <ExtraRotamersGeneric name="ex1_ex2" ex1="1" ex2="1"/>
+         <ReadResfile name="resfile" filename="resfile.txt"/>
+         <IncludeCurrent name="input_sc" />
+
+   </TASKOPERATIONS>
+
+  <RESIDUE_SELECTORS>
+     <Chain name="chX" chains="X"/>
+  </RESIDUE_SELECTORS>
+
+
+ 	<SCOREFXNS>
+    
+    <ScoreFunction name="s" weights="franklin2019"/>
+
+    <ScoreFunction name="cart_open" weights="franklin2019">
+         <Reweight scoretype="coordinate_constraint" weight="2" />
+    </ScoreFunction>
+
+    <ScoreFunction name="cart" weights="franklin2019">
+         <Reweight scoretype="coordinate_constraint" weight="2" />
+         <Reweight scoretype="rg" weight="1"/>
+         <Reweight scoretype="aa_composition" weight="1.0" />
+    </ScoreFunction>
+
+ 	</SCOREFXNS>
+ 
+
+ <FILTERS>
+
+ <ScoreType name="score_eval" scorefxn="s" threshold="5000"/>
+  <PackStat name="packstat" threshold="0.4" confidence="0" repeats="10" />
+  <ShapeComplementarity name="sc_jump1" jump="1" write_int_area="1" />
+  <ShapeComplementarity name="sc_jump2" jump="2" write_int_area="1" />
+  <CavityVolume name="cav_vol" />
+
+  <Holes name="holes" threshold="1.8" confidence="0"/>
+  <InterfaceHoles name="intf_holes" jump="2" threshold="200"/>
+
+ </FILTERS>
+
+
+
+	<MOVERS>
+
+    <ConstraintSetMover name="add_cst" cst_file="%%cst_file%%"/>
+ 	<AddMembraneMover name="add_memb"/>
+ 	<MembranePositionFromTopologyMover name="init_pos"/>
+ 	<AddCompositionConstraintMover name="AAcomp" filename="TMab_AA_comp_less2-MWY.comp" selector="chX" />
+
+ 	<FastRelax name="fast_design_relax"  disable_design="0" scorefxn="cart" relaxscript="InterfaceDesign2019" repeats="4" task_operations="arochi,ex1_ex2,input_sc,resfile" cst_file="%%cst_file%%"/>
+
+ 	 <FastDesign name="fast_design"  disable_design="0" scorefxn="cart" relaxscript="InterfaceDesign2019" repeats="6" task_operations="arochi,ex1_ex2,input_sc,resfile" cst_file="%%cst_file%%"/>
+
+
+ 	<InterfaceAnalyzerMover name="interface-data" packstat="1" interface_sc="1" interface="AB_X"/>
+
+
+
+	</MOVERS>
+ 
+	<PROTOCOLS>
+
+	<Add mover="add_memb"/>
+	<Add mover="init_pos"/>
+	<Add mover="AAcomp"/>
+
+	<Add mover="fast_design"/>
+
+ 
+    <Add mover="interface-data"/>
+    <Add filter="sc_jump1"/>
+    <Add filter="sc_jump2"/>
+    <Add filter_name="cav_vol"/>
+    <Add filter_name="holes"/>
+    <Add filter_name="intf_holes"/>
+
+ 
+
+
+	</PROTOCOLS>
+
+	<OUTPUT scorefxn="s"/>
+
+</ROSETTASCRIPTS>

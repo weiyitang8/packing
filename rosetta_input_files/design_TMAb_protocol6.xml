@@ -1,0 +1,96 @@
+<ROSETTASCRIPTS>
+ 
+  <TASKOPERATIONS>
+         <LimitAromaChi2 name="arochi"/>
+         <ExtraRotamersGeneric name="ex1_ex2" ex1="1" ex2="1"/>
+         <ReadResfile name="resfile" filename="resfile_setup5.txt"/>
+         <IncludeCurrent name="input_sc" />
+
+   </TASKOPERATIONS>
+
+  <RESIDUE_SELECTORS>
+     <Chain name="chX" chains="X"/>
+     <Chain name="chXAB" chains="A,B,X"/>
+     <Chain name="chAB" chains="A,B"/>
+     <Chain name="chA" chains="A"/>
+     <Chain name="chB" chains="B"/>
+  </RESIDUE_SELECTORS>
+
+
+ 	<SCOREFXNS>
+    
+    <ScoreFunction name="s" weights="franklin2019"/>
+
+    <ScoreFunction name="cart_open" weights="franklin2019">
+         <Reweight scoretype="coordinate_constraint" weight="2" />
+    </ScoreFunction>
+
+    <ScoreFunction name="cart" weights="ref2015_memb">
+         <Reweight scoretype="coordinate_constraint" weight="2" />
+         <Reweight scoretype="aa_composition" weight="1.0" />
+    </ScoreFunction>
+
+ 	</SCOREFXNS>
+ 
+
+ <FILTERS>
+
+ <ScoreType name="score_eval" scorefxn="s" threshold="5000"/>
+  <PackStat name="packstat" threshold="0.4" confidence="0" repeats="10" />
+
+  <ShapeComplementarity name="sc_jump1" jump="1" write_int_area="1" />
+  <ShapeComplementarity name="sc_jump2" jump="2" write_int_area="1" />
+  <ShapeComplementarity name="sc_AB-X" write_int_area="1" residue_selector1="chAB" residue_selector2="chX"/>
+  <ShapeComplementarity name="sc_AB" write_int_area="1" residue_selector1="chA" residue_selector2="chB"/>
+
+  <CavityVolume name="cav_vol" />
+
+  <Holes name="holes" threshold="1.8" confidence="0"/>
+
+  <Holes name="holes-ABX_interface" threshold="1.8" confidence="0" residue_selector="chXAB" normalize_per_atom="true" />
+  <Holes name="holes-AB_interface" threshold="1.8" confidence="0" residue_selector="chAB" normalize_per_atom="true" />
+
+  <InterfaceHoles name="intf_holes_jump2" jump="2" threshold="200"/>
+  <InterfaceHoles name="intf_holes_jump1" jump="1" threshold="200"/>
+
+
+ </FILTERS>
+
+
+
+	<MOVERS>
+
+    <ConstraintSetMover name="add_cst" cst_file="%%cst_file%%"/>
+ 	<AddMembraneMover name="add_memb"/>
+ 	<MembranePositionFromTopologyMover name="init_pos"/>
+ 	<SetMembranePositionMover name="init_posMEM"/>
+ 	<AddCompositionConstraintMover name="AAcomp" filename="TMab_AA_comp_less2-MWY.comp" selector="chX" />
+
+ 	<FastRelax name="fast_design_relax"  disable_design="0" scorefxn="cart" relaxscript="InterfaceDesign2019" repeats="4" task_operations="arochi,ex1_ex2,input_sc,resfile" cst_file="%%cst_file%%"/>
+
+ 	<FastDesign name="fast_design"  disable_design="0" scorefxn="cart" relaxscript="InterfaceDesign2019" repeats="8" task_operations="arochi,ex1_ex2,input_sc,resfile" cst_file="%%cst_file%%"/>
+
+
+ 	<InterfaceAnalyzerMover name="interface-data" scorefxn="s" packstat="1" interface_sc="1" interface="AB_X" pack_separated="1"/>
+
+
+
+	</MOVERS>
+ 
+	<PROTOCOLS>
+
+	<Add mover="add_memb"/>
+	<Add mover="init_posMEM"/>
+	<Add mover="AAcomp"/>
+
+	<Add mover="fast_design"/>
+
+	<Add mover="interface-data"/>
+    <Add filter_name="holes-ABX_interface"/>
+    
+
+	</PROTOCOLS>
+
+	<OUTPUT scorefxn="s"/>
+
+</ROSETTASCRIPTS>

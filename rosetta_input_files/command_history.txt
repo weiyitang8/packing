@@ -1,0 +1,92 @@
+
+
+For target PDB, use OPM PPM server to align PDB with implicit membrane, aligned roughly w/ Z-axis.
+File (opm_eVgL_pent_clean.pdb) is a protamer from PDB: 5MCT 
+
+
+Manually extract fragments of interest in pymol.  Place those files into a new directory
+
+>>   mkdir eVgL_frags
+>>   cp A14_frag.pdb ./eVgL_frags; cp B14_frag.pdb ./eVgL_frags;  cp mid15_frag.pdb ./eVgL_frags; 
+
+# on a Linux machine with the pre-compiled binary for CreatePDS & Master versions 2
+>> cd   ./eVgL_frags
+
+
+##### for 1 file:
+>>  createPDS --pdb mid15_frag.pdb --type query
+
+>>  master --query mid15_frag.pds --targetList ~/tmPDB_mar2020/40%%master-nr-TMdatabase_bychain/list.txt --rmsdCut 2 --matchOut mid15_frag.pds.m --seqOut mid15_frag.pds.s --structOut matches_mid15_frag --topN 5000
+
+# turn data into a multiple sequence alignment, including only 1 unique sequence per match;  rmsd cutoff = 2
+>>  python ~/bin/seq2msa_withMatch.py mid15_frag.pds.s mid15_frag.pds.m 2 > mid15_frag.pds.msa
+
+
+##### for a directory full of PDB file to run:
+>>   chmod u+x ../bin/run_master_batch.sh
+>>   ../bin/run_master_batch.sh
+
+
+>> cd ..
+>> create reference points for each fragment, computing the region of fragment is on protein outer surface (not protein core -facing).   The input pdb where fragments are sourced from is required...
+>>  python2.7 ../bin/surface_centroid.py opm_eVgL_pent.pdb  eVgL_frags/
+
+
+
+### Now search for new TM fragments binding interface - only consider matches with 2.0 RMSD to target fragment
+>>  cd   ./eVgL_frags
+>>    python ../bin/TMab_notDock_helixFinder.py A14_frag.pdb A14_frag.pds.msa ~/tmPDB_mar2020/40%%master-nr-TMdatabase_bychain_oPDB/ fished_A14_frag/  ../testMarkers.pdb 2.0
+
+
+### Cluster a 'class' of TM fragments fished
+#  input threshold here is 2.5 Å RMSD within cluster members
+#  select by groupings: input parallel or antiparalle, also select by TM binder candidates contacting one or both helices
+>>	  python ../bin/ClusterTM_domains.py fished_A14_frag/fishedTM_Binds_interface/  a  2.5
+
+
+
+### Your fished our templates of new TM binders are ready.  
+##  Prepare your input membrane protein’s target region for design
+##  Using fast relax in RosettaMP
+
+>> mkdir ../relax_target
+>> cd ../relax_target
+>> cp ../opm_eVgL_pent_clean.pdb ./
+>> python ../bin/orient_and_relax_target_RosettaMP.py opm_eVgL_pent_clean.pdb ~/rosetta/ ../bin/tmBundle_Relax.xml 
+
+
+
+
+## in future, can automate determining cluster medoid/representitive(s) as different input backbones
+##  e.g. if 50 members, sub-cluster to find 5 most unique representitives
+
+
+## For now, manually select backbones from cluster, 
+## move files from Rosetta-formatted target, surface helices (pdb, resfile, constraints)
+
+>> mkdir mid15_frag_designs
+>> cd mid15_frag_designs
+
+>> python ../../bin/prepare_TmAb_design_files.py ./ ../../bin/9aa_helix_ideal_ACE-CT3-termini.pdb ./ design_set1_input.txt 
+
+
+## run protein design
+>>python ../../../bin/design_TMAb_v1.py design_input_struct.pdb ~/rosetta/ ../../../bin/design_TMAb_protocol2.xml ./resfile.txt ./target_region_constraints.txt setup2_output/
+
+
+## ANALYZING DESIGNS, ranking & filters by RosettaHoles2, interface energy, H-bonding, etc
+>> python ../../../bin/analyze_cluster_designsV1.py setup5_output/ X merged_c4_goodDesigns/
+
+
+
+## prepare a design for MD.  first copy your design pdb (Rosetta output) to MD folder
+>> cd queue4MD/
+>> python ~/pent_TM_antibody/bin/prep_TMab_models4_MD.py  design_input_struct_001_0001.pdb ~/pent_TM_antibody/MD_input_files/opm_eVgL_pent_cleanRelaxed.pdb ./ ~/pent_TM_antibody/MD_input_files/ 85_POPC c4_setup2_001_0001
+
+>> python rewrite_ca_restr_OVERWRITE.py
+
+
+### note… Rosetta output has integrated patches ACE & NME with the N & C-term directly
+#   ACE & NME are treated/numbered as extensions of the N or C-terminal protein amino acid
+#   if you make mutations  to the rosetta file in pymol & export that molecule, the ACE & NME are printed to pub file as separate residues. 
+#   prep_TMab_models4_MD.py code will fail unless you fix this numbering / atom labeling

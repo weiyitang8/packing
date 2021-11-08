@@ -1,0 +1,2 @@
+# full_path prefix N-aa_2_extend C-aa_2_extend  
+/Users/mmravic/pent_TM_antibody/eVgL_frags/fished_mid15_frag/fishedTM_Binds_interface/240_m630_ap2_20aa__tm_3V2Y_A6.pdb c4_set1 4 1
