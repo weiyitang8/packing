@@ -12,12 +12,12 @@ import shutil
 
 ###Run multiple Rosetta Design output and make the plot
 ### input 1) Path to directory of the rosetta output PDB files
-### input 2) chains(no spacing) of the target protein interface eg. AB
-### input 3) chain(single letter) of the "design TM antibody" eg. X
-### input 4) the cutoff of finalscore to decide what hole-knob-pair details you what to print out
-### input 5) the cutoff of filter to deicde whether this design worth going through 
-### usage
-### python RUNME.py . AB X 8
+### input 2) the cutoff of finalscore to decide what hole-knob-pair details you what to print out 
+### input 3) the cutoff of filter to deicde whether this design worth going through 
+### input 4) output directory name for the GOOD/pass the thirld filter proteins and result txt files.
+### input chains(no spacing) of the target protein interface eg. AB by default
+### input chain(single letter) of the "design TM antibody" eg. X by default
+
 
 ###The plotting part was meant to use on the jupyter notebook though
 
@@ -33,9 +33,9 @@ import shutil
 input_dir=sys.argv[1]
 chainABC_str = 'AB'
 chainX_str='X'
-scorecutoff=6
-thirdfilter=6
-output_dir=sys.argv[2]
+scorecutoff=sys.argv[2]
+thirdfilter=sys.argv[3]
+output_dir=sys.argv[4]
 ######################INPUT SECTION for single run##############################
 # input_dir='/home/sting-gpu/weiyi/design/Rosetta/setup5_output2/good_design'  
 # chainABC_str = 'AB'
@@ -64,30 +64,31 @@ print('\n -----------------------\n the output directory is built.')
     
 parser   =PDBParser(QUIET=1)
 num_knobs=np.zeros((len(pdb_files),7))
+total_num=len(pdb_files)
 
         
     
 for num,input_PDB_name in enumerate(pdb_files): 
     if num%10==0:
-        print('now it is ',num)
+        print('now it is ',num, 'of',total_num) #just for impatient weiyi
 #   print(input_PDB_name)
     protein  = parser.get_structure(input_PDB_name,os.path.join(input_dir,input_PDB_name))[0]
     sum1,sum2,sum3,sum4,sum5,sum6,finalscore,packingnames   =pack.excute(protein,chainABC_str,chainX_str,scorecutoff,thirdfilter)
-#   print(sum3,sum4,sum5,sum6,finalscore)
-    #Huge matrix for further plotting
-    num_knobs[num][0]=sum1  #holeABC pass the first filter, vector method
-    num_knobs[num][1]=sum2  #holeX pass the first filter, vector method
-    num_knobs[num][2]=sum3  #holeABC pass the second filter, sasa/chain
-    num_knobs[num][3]=sum4  #holeX pass the second filter, sasa/chain
-    num_knobs[num][4]=sum5  #holeABC pass the second filter,sasa/knob
-    num_knobs[num][5]=sum6  #holeX pass the second filter, sasa/knob
-    num_knobs[num][6]=finalscore #final score, fully packing +1, partially packing +0.5
+# #   print(sum3,sum4,sum5,sum6,finalscore)
+#     #Huge matrix for further plotting
+#     num_knobs[num][0]=sum1  #holeABC pass the first filter, vector method
+#     num_knobs[num][1]=sum2  #holeX pass the first filter, vector method
+#     num_knobs[num][2]=sum3  #holeABC pass the second filter, sasa/chain
+#     num_knobs[num][3]=sum4  #holeX pass the second filter, sasa/chain
+#     num_knobs[num][4]=sum5  #holeABC pass the second filter,sasa/knob
+#     num_knobs[num][5]=sum6  #holeX pass the second filter, sasa/knob
+#     num_knobs[num][6]=finalscore #final score, fully packing +1, partially packing +0.5
     
     if finalscore >scorecutoff:
         
         #print out the result 
         txt2+= '###    ' +str(protein.get_parent().id)+'\n'
-        txt2+='*** The finalscore is %.1f there are %.1f knobs packing into holes\n' %(finalscore, sum6+sum5) 
+        txt2+='*** The finalscore is %.1f ,there are %.1f knobs packing into holes\n' %(finalscore, sum6+sum5) 
         print('*** good design,finalscore is above', scorecutoff,  '   ###', protein.get_parent().id)
         print('*** The finalscore is ', finalscore, 'there are',sum6+sum5, 'knobs packing into holes')
         for pair in packingnames:
