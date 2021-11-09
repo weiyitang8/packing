@@ -20,6 +20,9 @@ input 2) the cutoff of finalscore to decide what hole-knob-pair details you what
 input 3) the cutoff of filter to deicde whether this design worth going through *8 is recommended*
 input 4) output directory name for the GOOD/pass the thirld filter proteins and result txt files.
 
-### input chains(no spacing) of the target protein interface eg. AB by default
-### input chain(single letter) of the "design TM antibody" eg. X by default
+# input chains(no spacing) of the target protein interface eg. AB by default
+# input chain(single letter) of the "design TM antibody" eg. X by default
 
+Usage:
+
+python packingRUNME.py ~/Downloads/SETUP6-5  8  8 ~/Downloads/SETUP6-5/goodones 
