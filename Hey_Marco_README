@@ -1,0 +1,25 @@
+Hey Marco
+
+There are only three scripts you need to download:
+1) packingRUNME.py
+2) packing_analysisV3.py
+3) sasa_sourcecode.py
+
+Run packingRUNME.py and it will gives out:
+1) The printed results in the terminal
+2) One result txt file with detailed information of which knobs packing into which holes.
+3) ***** One result txt file with only the final scores and #knobs that packed
+4) The GOOD ones that have a final score above #your_input_scorecutoff will be copied to the new directory.
+
+
+PackingRUNME usage are listed below.
+
+Run multiple Rosetta Design output and make the plot
+input 1) Path to directory of the rosetta output PDB files
+input 2) the cutoff of finalscore to decide what hole-knob-pair details you what to print out *8-10 is recommended*
+input 3) the cutoff of filter to deicde whether this design worth going through *8 is recommended*
+input 4) output directory name for the GOOD/pass the thirld filter proteins and result txt files.
+
+### input chains(no spacing) of the target protein interface eg. AB by default
+### input chain(single letter) of the "design TM antibody" eg. X by default
+
