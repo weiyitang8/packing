@@ -54,8 +54,8 @@ if not os.path.exists(output_dir):
     os.mkdir(output_dir)
 
 result_sum_score= open(os.path.join(output_dir,'result_sum_score.txt'),'w')
-txt = '\n#  Good design finalscore is above ' +str(scorecutoff)+'\n'
-txt+= '#  Design_name          finalscore   #packed_knobs\n'
+txt = '\n#  Good design, finalscore is above ' +str(scorecutoff)+'\n'
+txt+= '#  Design_name                  finalscore         #packed_knobs\n'
 
 result_w_detail=open(os.path.join(output_dir,'result_w_detail.txt'),'w')
 txt2 = '\n#  Good design finalscore is above ' +str(scorecutoff)+'\n'
