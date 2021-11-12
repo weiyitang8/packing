@@ -33,8 +33,8 @@ import shutil
 input_dir=sys.argv[1]
 chainABC_str = 'AB'
 chainX_str='X'
-scorecutoff=sys.argv[2]
-thirdfilter=sys.argv[3]
+scorecutoff=int(sys.argv[2])
+thirdfilter=int(sys.argv[3])
 output_dir=sys.argv[4]
 ######################INPUT SECTION for single run##############################
 # input_dir='/home/sting-gpu/weiyi/design/Rosetta/setup5_output2/good_design'  
