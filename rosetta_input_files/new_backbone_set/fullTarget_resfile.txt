@@ -1,0 +1,151 @@
+# header - applied to all residues not specifies in resfile body
+
+USE_INPUT_SC
+NATRO
+
+# body of resfile - apply residue specific commands
+
+start
+
+
+### TARGET - interacting chains & residues
+
+1 A NATRO		# P
+2 A NATRO		# G
+3 A NATRO		# S
+4 A NATRO		# L
+5 A NATAA		# W*
+6 A NATRO	 	# A
+7 A NATRO		# I
+8 A NATRO		# V
+9 A NATAA		# F*
+10 A NATRO		# L
+11 A NATRO		# L
+12 A NATAA		# F*
+13 A NATRO		# L
+14 A NATRO		# I
+15 A NATRO		# V
+16 A NATAA		# L*
+17 A NATRO		# L
+18 A NATRO		# L
+19 A NATAA		# L*
+20 A NATRO		# A
+21 A NATRO		# I
+22 A NATRO		# V
+23 A NATAA		# F*
+24 A NATRO		# L
+25 A NATRO		# L
+26 A NATAA		# R*
+27 A NATRO		# G
+1 B NATRO		# P
+2 B NATRO		# G
+3 B NATAA		# S*
+4 B NATRO		# L
+5 B NATAA		# W*
+6 B NATRO 		# A
+7 B NATRO		# I
+8 B NATRO		# V
+9 B NATAA		# F*
+10 B NATRO		# L
+11 B NATRO		# L
+12 B NATAA		# F*
+13 B NATAA		# L*
+14 B NATRO		# I
+15 B NATRO		# V
+16 B NATAA		# L*
+17 B NATRO		# L
+18 B NATRO		# L
+19 B NATAA		# L*
+20 B NATRO		# A
+21 B NATRO		# I
+22 B NATRO		# V
+23 B NATAA		# F*
+24 B NATRO		# L
+25 B NATRO		# L
+26 B NATAA		# R*
+27 B NATRO		# G
+
+
+### TARGET - distant chains & residues (don't repack)
+
+1 C NATRO		# P
+2 C NATRO		# G
+3 C NATRO		# S
+4 C NATRO		# L
+5 C NATRO		# W*
+6 C NATRO	 	# A
+7 C NATRO		# I
+8 C NATRO		# V
+9 C NATRO		# F*
+10 C NATRO		# L
+11 C NATRO		# L
+12 C NATRO		# F*
+13 C NATRO		# L
+14 C NATRO		# I
+15 C NATRO		# V
+16 C NATRO		# L*
+17 C NATRO		# L
+18 C NATRO		# L
+19 C NATRO		# L*
+20 C NATRO		# A
+21 C NATRO		# I
+22 C NATRO		# V
+23 C NATRO		# F*
+24 C NATRO		# L
+25 C NATRO		# L
+26 C NATRO		# R*
+27 C NATRO		# G
+1 D NATRO		# P
+2 D NATRO		# G
+3 D NATRO		# S*
+4 D NATRO		# L
+5 D NATRO		# W*
+6 D NATRO 		# A
+7 D NATRO		# I
+8 D NATRO		# V
+9 D NATRO		# F*
+10 D NATRO		# L
+11 D NATRO		# L
+12 D NATRO		# F*
+13 D NATRO		# L*
+14 D NATRO		# I
+15 D NATRO		# V
+16 D NATRO		# L*
+17 D NATRO		# L
+18 D NATRO		# L
+19 D NATRO		# L*
+20 D NATRO		# A
+21 D NATRO		# I
+22 D NATRO		# V
+23 D NATRO		# F*
+24 D NATRO		# L
+25 D NATRO		# L
+26 D NATRO		# R*
+27 D NATRO		# G
+1 E NATRO		# P
+2 E NATRO		# G
+3 E NATRO		# S*
+4 E NATRO		# L
+5 E NATRO		# W*
+6 E NATRO 		# A
+7 E NATRO		# I
+8 E NATRO		# V
+9 E NATRO		# F*
+10 E NATRO		# L
+11 E NATRO		# L
+12 E NATRO		# F*
+13 E NATRO		# L*
+14 E NATRO		# I
+15 E NATRO		# V
+16 E NATRO		# L*
+17 E NATRO		# L
+18 E NATRO		# L
+19 E NATRO		# L*
+20 E NATRO		# A
+21 E NATRO		# I
+22 E NATRO		# V
+23 E NATRO		# F*
+24 E NATRO		# L
+25 E NATRO		# L
+26 E NATRO		# R*
+27 E NATRO		# G

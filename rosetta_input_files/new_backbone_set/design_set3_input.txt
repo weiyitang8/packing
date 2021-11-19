@@ -1,0 +1,2 @@
+# full_path prefix N-aa_2_extend C-aa_2_extend  
+/Users/tangweiyi/desktop/design/Rosetta/rosetta_input_files/set/fished_mid15_frag/fishedTM_Binds_interface/59_m160_ap2_20aa__tm_6M9T_A6.pdb c4_set9- 5 5
