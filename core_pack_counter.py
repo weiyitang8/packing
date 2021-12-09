@@ -70,6 +70,7 @@ print(disMat.mean())
 Z=sch.linkage(disMat,method='complete',metric='distance')
 h_clust=sch.fcluster(Z,3,criterion='distance')
 # print(len(set(h_clust)))
+print(h_clust)
 
 P=sch.dendrogram(Z,labels=ojbs.index)
 plt.show()
